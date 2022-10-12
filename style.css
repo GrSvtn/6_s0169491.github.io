@@ -23,20 +23,6 @@ header {
     font-weight: bold;
 }
 
-nav {
-    max-width: 960px;
-}
-
-#nav {
-    max-width: fit-content;
-    font-size: x-large;
-}
-
-.nav-link {
-    color: #ae4949;
-    background-color: lightcyan;
-}
-
 div#body {
     font-size: large;
 }
@@ -44,23 +30,6 @@ div#body {
 a {
     color: #ae4949;
     text-decoration: none;
-}
-
-table {
-    border: solid;
-}
-
-div.table table {
-    display: table;
-    max-width: fit-content;
-}
-
-tr.odd {
-    background-color: palevioletred;
-}
-
-tr.even {
-    background-color: purple;
 }
 
 #按鈕 {
