@@ -24,13 +24,13 @@ function ji_suan() {
     }
     jie_guo.classList.add("text-" + (
         (flag)
-            ? ("success")
-            : ("danger")
+        ? ("success")
+        : ("danger")
     ));
     jie_guo.classList.remove("text-" + (
         (!flag)
-            ? ("success")
-            : ("danger")
+        ? ("success")
+        : ("danger")
     ));
     jie_guo.innerHTML = hui_da;
     return false;
@@ -51,11 +51,19 @@ function updatePrice() {
     }
 
     let radioDiv = document.getElementById("單選框按鈕");
-    radioDiv.style.display = (select.value == "2" ? "block" : "none");
+    radioDiv.style.display = (
+        select.value === "2"
+        ? "block"
+        : "none"
+    );
     let checkDiv = document.getElementById("複選框");
-    checkDiv.style.display = (select.value == "3" ? "block" : "none");
+    checkDiv.style.display = (
+        select.value === "3"
+        ? "block"
+        : "none"
+    );
 
-    if (select.value == "2") {
+    if (select.value === "2") {
         let radios = document.getElementsByName("服裝類別");
         radios.forEach(function (radio) {
             if (radio.checked) {
@@ -65,7 +73,7 @@ function updatePrice() {
                 }
             }
         });
-    } else if (select.value == "3") {
+    } else if (select.value === "3") {
         let checkboxes = document.querySelectorAll("#複選框 input");
         checkboxes.forEach(function (checkbox) {
             if (checkbox.checked) {
@@ -82,7 +90,7 @@ function updatePrice() {
     let flag = false;
     if (shu_liang.value === "") {
         ans = "請輸入數據！";
-    } else if (shu_liang.value.match(natural ()) === null) {
+    } else if (shu_liang.value.match(natural()) === null) {
         ans = "數字寫錯了！";
     } else {
         flag = true;
@@ -93,30 +101,30 @@ function updatePrice() {
     let cheng_ben = document.getElementById("貨物成本");
     cheng_ben.classList.add("text-" + (
         (flag)
-            ? ("success")
-            : ("danger")
+        ? ("success")
+        : ("danger")
     ));
     cheng_ben.classList.remove("text-" + (
         (!flag)
-            ? ("success")
-            : ("danger")
+        ? ("success")
+        : ("danger")
     ));
     cheng_ben.innerHTML = ans;
 }
 
 function getPrices() {
     return {
-        prodTypes: [200, 400, 1000],
         prodOptions: {
-            cheng_ren: 300,
+            cheng_ren: 300
         },
         prodProperty: {
-            xin: 500,
-        }
+            xin: 500
+        },
+        prodTypes: [200, 400, 1000]
     };
 }
 
-window.addEventListener('DOMContentLoaded', function (event) {
+window.addEventListener("DOMContentLoaded", function () {
     let b = document.getElementById("按鈕");
     b.addEventListener("click", ji_suan);
 
